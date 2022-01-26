@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
    
     void Start()
     {
-        
+        //게임 오브젝트에서 Rigidbody 컴퍼넌트를 찾아 player Rigidbody에 할당.
+        playerRigidbody = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -36,14 +37,13 @@ public class PlayerController : MonoBehaviour
         //{
         //    playerRigidbody.AddForce(-speed, 0f, 0f);
         //}
-        playerRigidbody = GetComponent<Rigidbody>();
-        //게임 오브젝트에서 Rigidbody 컴퍼넌트를 찾아 player Rigidbody에 할당.
-
+      
+       
         //수평축과 수직축의 입력값을 감지하여 저장
         float xInput = Input.GetAxis("Horizontal");
-        float zInput = Input.GetAxis("vertical");
+        float zInput = Input.GetAxis("Vertical");
 
-        //실제 이동속도를 입력갑솨 이동속력을 사용해 결정
+        //실제 이동속도를 입력값 과 이동속력을 사용해 결정
         float xspeed = xInput * speed;
         float zspeed = zInput * speed;
 
