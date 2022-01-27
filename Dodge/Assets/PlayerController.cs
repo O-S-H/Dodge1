@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public PlayerController playerController;
     //이동에 사용할 리지드바디 컴포넌트 변수
     private Rigidbody playerRigidbody;
     //이동에 적용할 속력
     public float speed = 8f;
 
 
-   
     void Start()
     {
         //게임 오브젝트에서 Rigidbody 컴퍼넌트를 찾아 player Rigidbody에 할당.
