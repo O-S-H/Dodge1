@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.R))
             {
-                SceneManager.LoadScene("smapleScene");
+                SceneManager.LoadScene("SampleScene");
             }
         }
     }
@@ -43,6 +43,18 @@ public class GameManager : MonoBehaviour
     {
         isGameover = true;
         gameoverText.SetActive(true);
+
+        float bestTime = PlayerPrefs.GetFloat("BestTime");
+
+        if (surviveTime > bestTime)
+        {
+
+            bestTime = surviveTime;
+            PlayerPrefs.SetFloat("BestTime", bestTime);
+
+        }
+        recordText.text = "Best time : " + (int)bestTime;
+
     }
     
     
